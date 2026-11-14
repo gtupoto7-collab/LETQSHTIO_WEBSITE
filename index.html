@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="bg" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Вътрешни Ремонти | LETQSHTIO.COM</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#090a0f',
+                        cardBg: '#12151f',
+                        neonCyan: '#00f2fe',
+                        neonPink: '#ff007f',
+                        neonLime: '#39ff14',
+                    },
+                    boxShadow: {
+                        'neon-cyan': '0 0 20px rgba(0, 242, 254, 0.6)',
+                        'neon-pink': '0 0 20px rgba(255, 0, 127, 0.6)',
+                        'neon-lime': '0 0 20px rgba(57, 255, 20, 0.6)',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #090a0f;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .glow-text-cyan {
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.8), 0 0 20px rgba(0, 242, 254, 0.5);
+        }
+        .glow-text-pink {
+            text-shadow: 0 0 10px rgba(255, 0, 127, 0.8), 0 0 20px rgba(255, 0, 127, 0.5);
+        }
+        .glass-panel {
+            background: rgba(18, 21, 31, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .gradient-border {
+            background: linear-gradient(135deg, #00f2fe 0%, #ff007f 100%);
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-gray-100 antialiased selection:bg-neonCyan selection:text-black">
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl gradient-border flex items-center justify-center shadow-neon-cyan">
+                    <i class="fa-solid fa-wand-magic-sparkles text-black text-lg"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-2xl font-black tracking-wider uppercase bg-gradient-to-r from-neonCyan to-neonPink bg-clip-text text-transparent">
+                        VIP <span class="text-white">RECON</span>
+                    </span>
+                    <span class="text-[10px] tracking-widest text-neonLime font-mono font-bold uppercase">⚡ RED SOFTWARE TEAM BG ⚡</span>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex items-center space-x-8 font-medium">
+                <a href="#services" class="hover:text-neonCyan transition-colors">Услуги</a>
+                <a href="#gallery" class="hover:text-neonPink transition-colors">Галерия</a>
+                <a href="#calculator" class="hover:text-neonLime transition-colors">Калкулатор</a>
+                <a href="#contact" class="hover:text-neonCyan transition-colors">Контакти</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="tel:+359883200460" class="hidden sm:flex items-center space-x-2 text-sm font-semibold bg-white/5 hover:bg-white/10 px-4 py-2.5 rounded-xl border border-white/10 transition-all shadow-neon-cyan">
+                    <i class="fa-solid fa-phone text-neonCyan"></i>
+                    <span>+359 883 200 460</span>
+                </a>
+                <button onclick="openModal()" class="bg-gradient-to-r from-neonCyan to-neonPink text-black font-extrabold px-6 py-2.5 rounded-xl shadow-neon-cyan hover:scale-105 active:scale-95 transition-all">
+                    Запази час
+                </button>
+                <button onclick="openAdminLogin()" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-gray-400 hover:text-neonLime transition-all" title="Админ Панел">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-28 pb-16 px-4 overflow-hidden">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-neonCyan/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neonPink/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-panel mb-6 border border-neonCyan/30 shadow-neon-cyan">
+                <span class="w-2.5 h-2.5 rounded-full bg-neonLime animate-pulse"></span>
+                <span class="text-xs sm:text-sm font-semibold tracking-wide uppercase text-neonCyan">🏆 13 ГОДИНИ ОПИТ • СОФИЯ, ПЕРНИК И РЕГИОНА</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight uppercase leading-none mb-6">
+                ✨ VIP СТРОИТЕЛНИ УСЛУГИ ✨ <br>
+                <span class="bg-gradient-to-r from-neonCyan via-white to-neonPink bg-clip-text text-transparent glow-text-cyan">& Луксозни Ремонти</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-gray-300 text-base sm:text-lg font-light mb-8">
+                👉 Декоративни мазилки и поръчкови VIP ремонти!<br>
+                👉 Боядисване и перфектна шпакловка с безкомпромисно качество.
+            </p>
+
+            <div class="inline-block p-4 rounded-2xl glass-panel border border-neonLime/40 mb-10 shadow-neon-lime text-sm sm:text-base font-medium text-neonLime">
+                🎁 БЕЗПЛАТЕН оглед и оферта на място за твоя обект! 🚀
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#services" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-neonCyan to-neonPink text-black font-extrabold shadow-neon-cyan hover:scale-105 transition-all text-center">
+                    Разгледай Услугите
+                </a>
+                <a href="#calculator" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel border border-white/20 font-bold hover:bg-white/10 transition-all text-center shadow-neon-pink">
+                    Калкулатор за Цена
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 max-w-5xl mx-auto">
+                <div class="glass-panel p-6 rounded-2xl border border-white/10">
+                    <div class="text-3xl sm:text-4xl font-black text-neonCyan mb-1">13 ГОД.</div>
+                    <div class="text-sm text-gray-400">Реален Стаж в Бранша</div>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl border border-white/10">
+                    <div class="text-3xl sm:text-4xl font-black text-neonPink mb-1">0 €</div>
+                    <div class="text-sm text-gray-400">Безплатен Оглед на място</div>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl border border-white/10">
+                    <div class="text-3xl sm:text-4xl font-black text-neonLime mb-1">VIP</div>
+                    <div class="text-sm text-gray-400">Луксозни Ремонти</div>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl border border-white/10">
+                    <div class="text-3xl sm:text-4xl font-black text-white mb-1">София</div>
+                    <div class="text-sm text-gray-400">Перник и региона</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 px-4 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-5xl font-black uppercase mb-4 tracking-wider">
+                    Нашите <span class="text-neonCyan glow-text-cyan">Уникални Услуги</span>
+                </h2>
+                <p class="text-gray-400 max-w-xl mx-auto">Използваме само иновативни материали от най-висок клас за перфектен финален завършек.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-panel p-8 rounded-3xl border border-white/10 hover:border-neonCyan/50 transition-all group hover:shadow-neon-cyan">
+                    <div class="w-16 h-16 rounded-2xl bg-neonCyan/10 text-neonCyan flex items-center justify-center text-2xl font-black mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 uppercase">Машинна Шпакловка</h3>
+                    <p class="text-gray-400 mb-6 font-light">Безупречно гладки стени и тавани с лазерна прецизност, готова основа за всякакви мазилки и фини бои.</p>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><i class="fa-solid fa-check text-neonCyan mr-2"></i> Перфектна хоризонталност и вертикалност</li>
+                        <li><i class="fa-solid fa-check text-neonCyan mr-2"></i> Висока якост и устойчивост на пукнатини</li>
+                    </ul>
+                </div>
+
+                <div class="glass-panel p-8 rounded-3xl border border-white/10 hover:border-neonPink/50 transition-all group hover:shadow-neon-pink">
+                    <div class="w-16 h-16 rounded-2xl bg-neonPink/10 text-neonPink flex items-center justify-center text-2xl font-black mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-paint-roller"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 uppercase">Премиум Боядисване</h3>
+                    <p class="text-gray-400 mb-6 font-light">Безвредни еко бои, устойчиви на миене и триене, нанесени с професионално безвъздушно оборудване (Airless).</p>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><i class="fa-solid fa-check text-neonPink mr-2"></i> Равномерно покритие без следи от ролка</li>
+                        <li><i class="fa-solid fa-check text-neonPink mr-2"></i> Неограничени цветови палитри (RAL / NCS)</li>
+                    </ul>
+                </div>
+
+                <div class="glass-panel p-8 rounded-3xl border border-white/10 hover:border-neonLime/50 transition-all group hover:shadow-neon-lime">
+                    <div class="w-16 h-16 rounded-2xl bg-neonLime/10 text-neonLime flex items-center justify-center text-2xl font-black mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-wand-magic"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 uppercase">Декоративни Мазилки</h3>
+                    <p class="text-gray-400 mb-6 font-light">Венецианска мазилка, травертино, бетон ефект, перлени отблясъци и 3D арт дизайни за изискани пространства.</p>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><i class="fa-solid fa-check text-neonLime mr-2"></i> Уникални текстури с ръчна изработка</li>
+                        <li><i class="fa-solid fa-check text-neonLime mr-2"></i> Луксозен и ексклузивен външен вид</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 px-4 bg-black/40">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-5xl font-black uppercase mb-4 tracking-wider">
+                    Реални <span class="text-neonPink glow-text-pink">Резултати</span>
+                </h2>
+                <p class="text-gray-400 max-w-xl mx-auto">Разгледайте част от нашите завършени луксозни обекти в София, Перник и региона.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Dynamically populated via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Cost Calculator -->
+    <section id="calculator" class="py-24 px-4 relative">
+        <div class="max-w-4xl mx-auto glass-panel p-8 sm:p-12 rounded-3xl border border-white/20 shadow-neon-cyan">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl sm:text-4xl font-black uppercase mb-3">
+                    Онлайн <span class="text-neonCyan glow-text-cyan">Калкулатор</span>
+                </h2>
+                <p class="text-gray-400">Изчислете ориентировъчна стойност за Вашия ремонт мигновено.</p>
+            </div>
+
+            <div class="space-y-8">
+                <div>
+                    <label class="block text-sm font-semibold uppercase mb-3 text-gray-300">Площ на помещението / обекта (кв.м): <span id="areaVal" class="text-neonCyan font-black text-lg">80</span> кв.м</label>
+                    <input type="range" id="areaInput" min="20" max="500" value="80" class="w-full accent-neonCyan cursor-pointer h-2 bg-gray-800 rounded-lg" oninput="calculatePrice()">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <!-- Dynamic checkboxes rendered via JS -->
+                </div>
+
+                <div class="p-6 rounded-2xl bg-black/55 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div>
+                        <div class="text-sm text-gray-400 uppercase tracking-wider font-semibold">Ориентировъчна цена:</div>
+                        <div class="text-3xl sm:text-4xl font-black text-neonLime mt-1" id="totalPrice">1,840 €</div>
+                    </div>
+                    <button onclick="openModal()" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-neonLime to-neonCyan text-black font-extrabold hover:scale-105 transition-all shadow-neon-lime">
+                        Заяви с тази цена
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact" class="py-20 px-4 border-t border-white/10 bg-black/60">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+            <div>
+                <div class="flex items-center space-x-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl gradient-border flex items-center justify-center shadow-neon-cyan">
+                        <i class="fa-solid fa-wand-magic-sparkles text-black text-lg"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-black tracking-wider uppercase bg-gradient-to-r from-neonCyan to-neonPink bg-clip-text text-transparent">
+                            VIP <span class="text-white">RECON</span>
+                        </span>
+                        <span class="text-[10px] tracking-widest text-neonLime font-mono font-bold uppercase">⚡ RED SOFTWARE TEAM BG ⚡</span>
+                    </div>
+                </div>
+                <p class="text-gray-400 font-light mb-6">
+                    13 години опит в декоративните мазилки, перфектната шпакловка, боядисването и поръчковите VIP ремонти в София, Перник и региона.
+                </p>
+                <div class="text-xs text-gray-500">
+                    Създадено от <span class="text-neonCyan font-bold">RED SOFTWARE TEAM BG</span> (Хоствано вечно на Render)
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold uppercase mb-6 text-neonCyan">Контакти & Viber</h4>
+                <ul class="space-y-4 text-gray-300">
+                    <li class="flex items-center space-x-3">
+                        <i class="fa-solid fa-phone text-neonPink"></i>
+                        <a href="tel:+359883200460" class="hover:text-neonCyan transition-colors font-bold text-lg">+359 883 200 460</a>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <i class="fa-solid fa-location-dot text-neonCyan"></i>
+                        <span>София, Перник и региона</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <i class="fa-solid fa-clock text-neonLime"></i>
+                        <span>Пиши или звъни още днес! Безплатен оглед.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold uppercase mb-6 text-neonPink">Бърз Запит</h4>
+                <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                    <input type="text" placeholder="Вашето Име" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-neonCyan transition-all">
+                    <input type="tel" placeholder="Телефон / Viber" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-neonCyan transition-all">
+                    <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-neonCyan to-neonPink text-black font-extrabold shadow-neon-cyan hover:scale-[1.02] transition-all">
+                        Изпрати запитване
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto pt-8 border-t border-white/10 text-center text-sm text-gray-500">
+            &copy; 2026 LETQSHTIO.COM — VIP Вътрешни Ремонти. Всички права запазени. | ⚡ RED SOFTWARE TEAM BG
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md hidden p-4">
+        <div class="glass-panel p-8 rounded-3xl max-w-md w-full border border-neonCyan/40 shadow-neon-cyan relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-2xl font-black uppercase mb-2">Безплатен Оглед на Място</h3>
+            <p class="text-gray-400 text-sm mb-6">Оставете вашите координати и ще се свържем с вас по телефон или Viber.</p>
+            
+            <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs uppercase font-bold text-gray-400 mb-1">Име</label>
+                    <input type="text" required class="w-full bg-black/50 border border-white/15 rounded-xl px-4 py-3 text-sm focus:border-neonCyan focus:outline-none" placeholder="Иван Иванов">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase font-bold text-gray-400 mb-1">Телефон / Viber</label>
+                    <input type="tel" required class="w-full bg-black/50 border border-white/15 rounded-xl px-4 py-3 text-sm focus:border-neonCyan focus:outline-none" placeholder="+359 883 200 460">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase font-bold text-gray-400 mb-1">Населено място</label>
+                    <input type="text" required class="w-full bg-black/50 border border-white/15 rounded-xl px-4 py-3 text-sm focus:border-neonCyan focus:outline-none" placeholder="София / Перник">
+                </div>
+                <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-neonCyan to-neonPink text-black font-extrabold shadow-neon-cyan hover:scale-[1.02] transition-all">
+                    Заяви Безплатен Оглед
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Message Box -->
+    <div id="msgBox" class="fixed bottom-6 right-6 z-50 glass-panel border border-neonLime/50 text-white px-6 py-4 rounded-2xl shadow-neon-lime translate-y-32 opacity-0 transition-all duration-300 flex items-center space-x-3">
+        <i class="fa-solid fa-circle-check text-neonLime text-xl"></i>
+        <div>
+            <div class="font-bold" id="msgTitle">Успешно изпратено!</div>
+            <div class="text-xs text-gray-300" id="msgDesc">Очаквайте обаждане от нашия екип.</div>
+        </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div id="adminLoginModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md hidden p-4">
+        <div class="glass-panel p-8 rounded-3xl max-w-sm w-full border border-neonLime/50 shadow-neon-lime relative">
+            <button onclick="closeAdminLogin()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 rounded-2xl bg-neonLime/10 text-neonLime mx-auto flex items-center justify-center text-xl mb-3 shadow-neon-lime">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h3 class="text-xl font-black uppercase tracking-wider text-white">LETQSHTIO Достъп</h3>
+                <p class="text-xs text-gray-400 mt-1">Въведете секретни данни за управление</p>
+            </div>
+            <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs uppercase font-bold text-gray-400 mb-1">Потребителско име</label>
+                    <input type="text" id="adminUser" required class="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm focus:border-neonLime focus:outline-none text-white">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase font-bold text-gray-400 mb-1">Парола</label>
+                    <input type="password" id="adminPass" required class="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm focus:border-neonLime focus:outline-none text-white">
+                </div>
+                <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-neonLime to-neonCyan text-black font-extrabold shadow-neon-lime hover:scale-[1.02] transition-all">
+                    Вход в Панела
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard Modal -->
+    <div id="adminDashboardModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-lg hidden p-4 overflow-y-auto">
+        <div class="glass-panel p-6 sm:p-8 rounded-3xl max-w-4xl w-full border border-neonCyan/50 shadow-neon-cyan relative my-8 max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between pb-6 border-b border-white/10 mb-6">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-neonCyan/10 text-neonCyan flex items-center justify-center shadow-neon-cyan">
+                        <i class="fa-solid fa-gauge-high"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-black uppercase text-white">LETQSHTIO.COM - Управление</h3>
+                        <p class="text-xs text-neonCyan font-mono">RED SOFTWARE TEAM BG - RENDER DEPLOY READY</p>
+                    </div>
+                </div>
+                <button onclick="closeAdminDashboard()" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 flex items-center justify-center text-gray-400 hover:text-white">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Dashboard Tabs Navigation -->
+            <div class="flex space-x-2 mb-6 border-b border-white/10 pb-4">
+                <button onclick="switchAdminTab('servicesTab')" id="btnServicesTab" class="px-5 py-2.5 rounded-xl bg-neonCyan text-black font-extrabold text-sm transition-all shadow-neon-cyan">Услуги & Цени</button>
+                <button onclick="switchAdminTab('requestsTab')" id="btnRequestsTab" class="px-5 py-2.5 rounded-xl bg-white/5 text-gray-300 font-extrabold text-sm hover:bg-white/10 transition-all">Заявки (<span id="reqCount">0</span>)</button>
+                <button onclick="switchAdminTab('photosTab')" id="btnPhotosTab" class="px-5 py-2.5 rounded-xl bg-white/5 text-gray-300 font-extrabold text-sm hover:bg-white/10 transition-all">Снимки & Галерия</button>
+            </div>
+
+            <!-- Tab 1: Services & Prices Management -->
+            <div id="servicesTab" class="space-y-6">
+                <h4 class="text-lg font-bold uppercase text-neonCyan">Ръчно добавяне / Редакция на Услуги и Цени</h4>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <input type="text" id="newServiceName" placeholder="Име на услуга (напр. 3D Венецианска мазилка)" class="bg-black/50 border border-white/15 rounded-xl px-4 py-3 text-sm focus:border-neonCyan focus:outline-none text-white">
+                    <input type="number" id="newServicePrice" placeholder="Цена за кв.м (€)" class="bg-black/50 border border-white/15 rounded-xl px-4 py-3 text-sm focus:border-neonCyan focus:outline-none text-white">
+                    <button onclick="addNewService()" class="py-3 rounded-xl bg-gradient-to-r from-neonCyan to-neonPink text-black font-extrabold shadow-neon-cyan hover:scale-[1.02] transition-all">
+                        <i class="fa-solid fa-plus mr-2"></i> Добави Услуга
+                    </button>
+                </div>
+
+                <div class="mt-6">
+                    <h5 class="text-sm font-bold uppercase text-gray-400 mb-3">Активни Услуги в Калкулатора</h5>
+                    <div id="servicesListContainer" class="space-y-3">
+                        <!-- Dynamic list populated via JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Requests Management -->
+            <div id="requestsTab" class="space-y-6 hidden">
+                <div class="flex items-center justify-between">
+                    <h4 class="text-lg font-bold uppercase text-neonPink">Клиентски Заявки за Оглед</h4>
+                    <button onclick="clearAllRequests()" class="text-xs text-red-400 hover:text-red-300 font-bold px-3 py-1.5 rounded-lg bg-red-500/10 border border-red-500/20">Изчисти всички</button>
+                </div>
+                <div id="requestsListContainer" class="space-y-3 max-h-96 overflow-y-auto pr-2">
+                    <!-- Dynamic list -->
+                </div>
+            </div>
+
+            <!-- Tab 3: Photo Upload Section -->
+            <div id="photosTab" class="space-y-6 hidden">
+                <h4 class="text-lg font-bold uppercase text-neonLime">Директно Качване на Снимки</h4>
+                <div class="glass-panel p-8 rounded-3xl border border-dashed border-neonLime/50 text-center relative hover:bg-white/[0.02] transition-all group cursor-pointer shadow-neon-lime">
+                    <input type="file" id="photoFileInput" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer w-full h-full z-10" onchange="handlePhotoUpload(event)">
+                    <div class="w-16 h-16 rounded-2xl bg-neonLime/10 text-neonLime flex items-center justify-center mx-auto text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+                    <h5 class="text-lg font-bold text-white mb-1">⚡ Кликнете тук или пуснете снимка</h5>
+                    <p class="text-xs text-gray-400">Супер моден бутон за мгновенно добавяне в галерията на сайта</p>
+                </div>
+
+                <div>
+                    <h5 class="text-sm font-bold uppercase text-gray-400 mb-3">Качени Снимки в Галерията</h5>
+                    <div id="uploadedPhotosGrid" class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                        <!-- Dynamic photo items -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let appData = {
+            services: [
+                { id: 1, name: 'Машинна Шпакловка', price: 15, active: true },
+                { id: 2, name: 'Премиум Боядисване', price: 8, active: true },
+                { id: 3, name: 'Декоративна мазилка', price: 35, active: true }
+            ],
+            requests: [
+                { id: 1, name: 'Иван Иванов', phone: '+359 883 200 460', city: 'София', date: '14.04.2026, 12:30' }
+            ],
+            photos: [
+                { id: 1, url: 'https://placehold.co/600x600/12151f/00f2fe?text=Венецианска+Мазилка', title: 'Модерен Травертино стил' },
+                { id: 2, url: 'https://placehold.co/600x600/12151f/ff007f?text=Машинна+Шпакловка', title: 'Лазерно нивелирани стени' },
+                { id: 3, url: 'https://placehold.co/600x600/12151f/39ff14?text=Премиум+Боядисване', title: 'Дизайнерски цветови решения' }
+            ]
+        };
+
+        if(localStorage.getItem('letqshtio_vip_recon_data')) {
+            try {
+                appData = JSON.parse(localStorage.getItem('letqshtio_vip_recon_data'));
+            } catch(e) {}
+        }
+
+        function saveAppData() {
+            localStorage.setItem('letqshtio_vip_recon_data', JSON.stringify(appData));
+            renderDynamicContent();
+        }
+
+        function calculatePrice() {
+            const area = parseInt(document.getElementById('areaInput').value);
+            document.getElementById('areaVal').textContent = area;
+
+            let pricePerSqM = 0;
+            appData.services.forEach(s => {
+                const chk = document.getElementById('srv_chk_' + s.id);
+                if(chk && chk.checked) {
+                    pricePerSqM += s.price;
+                }
+            });
+
+            const total = area * pricePerSqM;
+            document.getElementById('totalPrice').textContent = total.toLocaleString() + ' €';
+        }
+
+        function renderDynamicContent() {
+            const calcCheckboxesContainer = document.querySelector('#calculator .grid');
+            if(calcCheckboxesContainer) {
+                let html = '';
+                appData.services.forEach(s => {
+                    const colors = ['neonCyan', 'neonPink', 'neonLime'];
+                    const col = colors[s.id % colors.length];
+                    html += `
+                        <label class="glass-panel p-4 rounded-2xl border border-white/10 flex items-center space-x-3 cursor-pointer hover:border-${col} transition-all">
+                            <input type="checkbox" id="srv_chk_${s.id}" ${s.active ? 'checked' : ''} onchange="toggleServiceActive(${s.id})" class="w-5 h-5 accent-${col} rounded">
+                            <span class="text-sm font-bold">${s.name} (${s.price} €/кв.м)</span>
+                        </label>
+                    `;
+                });
+                calcCheckboxesContainer.innerHTML = html;
+            }
+            calculatePrice();
+
+            const srvListContainer = document.getElementById('servicesListContainer');
+            if(srvListContainer) {
+                let srvHtml = '';
+                appData.services.forEach(s => {
+                    srvHtml += `
+                        <div class="glass-panel p-4 rounded-xl border border-white/10 flex items-center justify-between">
+                            <div>
+                                <span class="font-bold text-white">${s.name}</span>
+                                <span class="ml-3 text-neonCyan font-mono font-bold">${s.price} €/кв.м</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button onclick="deleteService(${s.id})" class="text-red-400 hover:text-red-300 p-2"><i class="fa-solid fa-trash"></i></button>
+                            </div>
+                        </div>
+                    `;
+                });
+                srvListContainer.innerHTML = srvHtml;
+            }
+
+            const reqContainer = document.getElementById('requestsListContainer');
+            document.getElementById('reqCount').textContent = appData.requests.length;
+            if(reqContainer) {
+                if(appData.requests.length === 0) {
+                    reqContainer.innerHTML = '<p class="text-gray-400 text-sm text-center py-6">Няма нови заявки.</p>';
+                } else {
+                    let reqHtml = '';
+                    appData.requests.forEach((r, idx) => {
+                        reqHtml += `
+                            <div class="glass-panel p-4 rounded-xl border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                                <div>
+                                    <div class="font-bold text-white text-base">${r.name}</div>
+                                    <div class="text-xs text-neonPink font-mono mt-1"><i class="fa-solid fa-phone mr-1"></i> ${r.phone} <i class="fa-solid fa-location-dot ml-2 mr-1"></i> ${r.city}</div>
+                                    <div class="text-[10px] text-gray-500 mt-1">${r.date}</div>
+                                </div>
+                                <div class="flex items-center space-x-2 w-full sm:w-auto justify-end">
+                                    <a href="tel:${r.phone}" class="px-4 py-2 rounded-lg bg-neonCyan/20 text-neonCyan font-bold text-xs hover:bg-neonCyan/30">Звънни</a>
+                                    <button onclick="deleteRequest(${idx})" class="px-3 py-2 rounded-lg bg-red-500/20 text-red-400 font-bold text-xs hover:bg-red-500/30"><i class="fa-solid fa-trash"></i> Изтрий</button>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    reqContainer.innerHTML = reqHtml;
+                }
+            }
+
+            const galleryGrid = document.querySelector('#gallery .grid');
+            if(galleryGrid) {
+                let galHtml = '';
+                appData.photos.forEach(p => {
+                    galHtml += `
+                        <div class="relative group overflow-hidden rounded-3xl border border-white/15 h-80">
+                            <img src="${p.url}" alt="Снимка" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
+                                <span class="text-neonCyan font-bold text-sm">VIP ОБЕКТ</span>
+                                <h4 class="text-xl font-extrabold text-white">${p.title}</h4>
+                            </div>
+                        </div>
+                    `;
+                });
+                galleryGrid.innerHTML = galHtml;
+            }
+
+            const adminPhotosGrid = document.getElementById('uploadedPhotosGrid');
+            if(adminPhotosGrid) {
+                let apHtml = '';
+                appData.photos.forEach((p, idx) => {
+                    apHtml += `
+                        <div class="relative rounded-2xl overflow-hidden border border-white/15 h-36 group">
+                            <img src="${p.url}" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <button onclick="deletePhoto(${idx})" class="p-2.5 rounded-xl bg-red-500 text-white shadow-lg hover:scale-110 transition-all"><i class="fa-solid fa-trash"></i> Изтрий</button>
+                            </div>
+                        </div>
+                    `;
+                });
+                adminPhotosGrid.innerHTML = apHtml;
+            }
+        }
+
+        function toggleServiceActive(id) {
+            const s = appData.services.find(item => item.id === id);
+            if(s) {
+                const chk = document.getElementById('srv_chk_' + id);
+                s.active = chk.checked;
+                saveAppData();
+            }
+        }
+
+        function openModal() {
+            document.getElementById('bookingModal').classList.remove('hidden');
+        }
+        function closeModal() {
+            document.getElementById('bookingModal').classList.add('hidden');
+        }
+
+        function openAdminLogin() {
+            document.getElementById('adminLoginModal').classList.remove('hidden');
+        }
+        function closeAdminLogin() {
+            document.getElementById('adminLoginModal').classList.add('hidden');
+        }
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            const u = document.getElementById('adminUser').value.trim();
+            const p = document.getElementById('adminPass').value.trim();
+            if(u === 'LETQSHTIO' && p === 'LETQSHTIO') {
+                closeAdminLogin();
+                document.getElementById('adminLoginModal').querySelector('form').reset();
+                document.getElementById('adminDashboardModal').classList.remove('hidden');
+                renderDynamicContent();
+            } else {
+                showMsg('Грешни данни!', 'Потребителското име или парола са грешни.', 'text-red-400');
+            }
+        }
+        function closeAdminDashboard() {
+            document.getElementById('adminDashboardModal').classList.add('hidden');
+        }
+
+        function switchAdminTab(tabId) {
+            document.getElementById('servicesTab').classList.add('hidden');
+            document.getElementById('requestsTab').classList.add('hidden');
+            document.getElementById('photosTab').classList.add('hidden');
+
+            document.getElementById('btnServicesTab').className = 'px-5 py-2.5 rounded-xl bg-white/5 text-gray-300 font-extrabold text-sm hover:bg-white/10 transition-all';
+            document.getElementById('btnRequestsTab').className = 'px-5 py-2.5 rounded-xl bg-white/5 text-gray-300 font-extrabold text-sm hover:bg-white/10 transition-all';
+            document.getElementById('btnPhotosTab').className = 'px-5 py-2.5 rounded-xl bg-white/5 text-gray-300 font-extrabold text-sm hover:bg-white/10 transition-all';
+
+            document.getElementById(tabId).classList.remove('hidden');
+            if(tabId === 'servicesTab') document.getElementById('btnServicesTab').className = 'px-5 py-2.5 rounded-xl bg-neonCyan text-black font-extrabold text-sm transition-all shadow-neon-cyan';
+            if(tabId === 'requestsTab') document.getElementById('btnRequestsTab').className = 'px-5 py-2.5 rounded-xl bg-neonPink text-black font-extrabold text-sm transition-all shadow-neon-pink';
+            if(tabId === 'photosTab') document.getElementById('btnPhotosTab').className = 'px-5 py-2.5 rounded-xl bg-neonLime text-black font-extrabold text-sm transition-all shadow-neon-lime';
+        }
+
+        function addNewService() {
+            const name = document.getElementById('newServiceName').value.trim();
+            const price = parseFloat(document.getElementById('newServicePrice').value);
+            if(!name || isNaN(price)) return;
+
+            appData.services.push({
+                id: Date.now(),
+                name: name,
+                price: price,
+                active: true
+            });
+            document.getElementById('newServiceName').value = '';
+            document.getElementById('newServicePrice').value = '';
+            saveAppData();
+            showMsg('Успешно!', 'Новата услуга е добавена и отразена в ценоразписа.', 'text-neonLime');
+        }
+
+        function deleteService(id) {
+            appData.services = appData.services.filter(s => s.id !== id);
+            saveAppData();
+        }
+
+        function deleteRequest(idx) {
+            appData.requests.splice(idx, 1);
+            saveAppData();
+        }
+
+        function clearAllRequests() {
+            appData.requests = [];
+            saveAppData();
+        }
+
+        function handlePhotoUpload(e) {
+            const file = e.target.files[0];
+            if(!file) return;
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                appData.photos.push({
+                    id: Date.now(),
+                    url: event.target.result,
+                    title: 'Нов VIP обект'
+                });
+                saveAppData();
+                showMsg('Успешно!', 'Снимката е качена в галерията на сайта!', 'text-neonLime');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function deletePhoto(idx) {
+            appData.photos.splice(idx, 1);
+            saveAppData();
+        }
+
+        function showMsg(title = 'Успешно изпратено!', desc = 'Очаквайте обаждане от нашия екип.', colorClass = 'text-neonLime') {
+            const box = document.getElementById('msgBox');
+            document.getElementById('msgTitle').textContent = title;
+            document.getElementById('msgDesc').textContent = desc;
+            box.classList.remove('translate-y-32', 'opacity-0');
+            setTimeout(() => {
+                box.classList.add('translate-y-32', 'opacity-0');
+            }, 4000);
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            showMsg();
+            e.target.reset();
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            const inputs = e.target.querySelectorAll('input');
+            const name = inputs[0].value;
+            const phone = inputs[1].value;
+            const city = inputs[2].value;
+
+            appData.requests.unshift({
+                id: Date.now(),
+                name: name,
+                phone: phone,
+                city: city,
+                date: new Date().toLocaleString('bg-BG')
+            });
+            saveAppData();
+            closeModal();
+            e.target.reset();
+            showMsg('Заявката е приета!', 'Благодарим Ви! Ще се свържем с Вас скоро.');
+        }
+
+        renderDynamicContent();
+    </script>
+</body>
+</html>
